@@ -20,9 +20,9 @@ uint32_t tsLastReport = 0;
 #define BUTTON_LEFT 0
 // Update these with values suitable for your network.
 
-const char *ssid = "Moto One Fusion";
-const char *password = "12345566";
-const char *mqtt_server = "192.168.233.179";
+const char *ssid = "";        // WiFi name
+const char *password = "";    // WiFi password
+const char *mqtt_server = ""; // Your assign IP
 
 TFT_eSPI tft = TFT_eSPI();
 
@@ -198,7 +198,7 @@ void loop()
   if (now - lastMsg > 2000)
   {
     lastMsg = now;
-    //tft.fillScreen(TFT_BLACK);
+    // tft.fillScreen(TFT_BLACK);
 
     spO2 = pox.getSpO2();
     ritmo = pox.getHeartRate();
